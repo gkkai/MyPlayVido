@@ -79,6 +79,8 @@ private Button bt;
     private void startGetImageThread() {
         Cursor cursor = getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, projection, null, null, null);
         final VideoListAdapter  adapter = new VideoListAdapter(this, cursor);
+        listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
